@@ -1,4 +1,4 @@
-# BAmazon
+# Bamazon
 This projects simulates online shopping using command line interface.
 
 ## Overview
@@ -21,5 +21,5 @@ This will display all items that are avilable for purchase, and then prompt the 
 To check Manager view execute command `node bamazonManager.js` from the applications root directory.
 
 A manager can perform following operations:
-![](./screenshots/bamazonManager restock.PNG)
+![](./screenshots/bamazonManager.PNG)
 
