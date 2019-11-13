@@ -3,10 +3,10 @@ var inquirer = require("inquirer");
 var Table = require("cli-table");
 
 var connection = mysql.createConnection({
-	host:"localhost",
+	host:"127.0.0.1",
 	port:3306, 
 	user:"root",
-	password:"",
+	password:"root",
 	database:"bamazon"
 });
 
@@ -73,10 +73,16 @@ function restockRequest(){
 };
 
 function restockInventory(id, quant){
+	console.log("id=",id);
 	connection.query('SELECT * FROM Products WHERE item_id = '+id, function(err,res){
 		if(err){console.log(err)};
-		connection.query('UPDATE Products SET stock_quantity = stock_quantity + ' +stock_quantity+ 'WHERE item_id =' +item_id);
-
+		var my_stock = parseFloat(res[0].stock_quantity) + parseFloat(quant);
+		console.log(res[0].stock_quantity,quant);
+		var update_query = ('UPDATE Products SET stock_quantity =  ' + my_stock + '  WHERE item_id =' +id);
+		// connection.query('UPDATE Products SET stock_quantity =  ' + my_stock + '  WHERE item_id =' +item_id);
+		connection.query(update_query,function(err,res){
+			if(err){console.log(err)};
+		});
 		displayInventory();
 	});
 };
