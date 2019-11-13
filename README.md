@@ -1,4 +1,4 @@
-# Bamazon
+# BAmazon
 This projects simulates online shopping using command line interface.
 
 ## Overview
@@ -16,10 +16,19 @@ To check Customer view execute command `node bamazonCustomer.js` from the applic
 This will display all items that are avilable for purchase, and then prompt the user to choose an item and state how many of that item they intend to purchase.If there is enough of that item in stock, the purchase will go through.
 ![](./screenshots/bamazonCustomer.PNG)
 
+If there is not enough, the user will be told that the stock is insufficient.
+![](./screenshots/quantity.PNG)
+
 ### (B) Manager View 
 ---
 To check Manager view execute command `node bamazonManager.js` from the applications root directory.
 
 A manager can perform following operations:
+
+1. __Add to inventory__:
+This command allows the Manager to add to to restock items that are currently in the store.
 ![](./screenshots/bamazonManager.PNG)
 
+2.__Add new product__:
+This command allows the Manager to add an entirely new product to the store.
+![](./screenshots/add-product.PNG)
